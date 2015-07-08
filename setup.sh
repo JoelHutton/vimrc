@@ -35,7 +35,7 @@ then
 	echo "copying files into place"
 	sudo ln -s $(pwd)/vimrc ~/.vimrc
 	sudo ln -s $(pwd)/vimrc /etc/vim/vimrc
-	sudo ln -s ./vimrc /root/vimrc
+	sudo ln -s $(pwd)/vimrc /root/vimrc
 else 
 	echo "please execute from within the directory (can't find vimrc)"
 fi
