@@ -46,6 +46,7 @@ endif
 imap ht <Esc>
 nmap ht <Esc>
 vmap ht <Esc>
+nmap ; :
 nmap gh :tabp<Cr>  
 nmap gl :tabn<Cr>  
 
