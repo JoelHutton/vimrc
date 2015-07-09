@@ -43,12 +43,31 @@ if filereadable("/etc/vim/vimrc.local")
 endif
 
 "DVORAK mappings 
+"quick escape mappings in insert, normal and visual modes 
 imap ht <Esc>
 nmap ht <Esc>
 vmap ht <Esc>
-nmap ; :
+
+
+"make g + left|right (h or l) take you left or right a tab
 nmap gh :tabp<Cr>  
 nmap gl :tabn<Cr>  
+nmap g<Left> :tabp<Cr>  
+nmap g<Right> :tabn<Cr>  
+
+"copy and paste to the system register
+nmap s <Nop>
+vmap s <Nop>
+nmap sy "+y
+nmap sp "+p
+nmap sY "+Y
+nmap sP "+P
+
+"in normal mode map ; to the command console
+nmap ; :
+
+"Disable replace mode so it doesn't destroy undo history
+nmap R <Nop> 
 
 set number
 set nowrap
