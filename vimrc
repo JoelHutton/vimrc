@@ -57,6 +57,7 @@ nmap g<Right> :tabn<Cr>
 
 "copy and paste to the system register
 nmap s <Nop>
+vmap s <Nop>
 nmap sy "+y
 nmap sp "+p
 nmap sY "+Y
