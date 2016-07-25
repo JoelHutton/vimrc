@@ -64,6 +64,10 @@ nmap sY "+Y
 nmap sP "+P
 set clipboard=unnamedplus
 
+"turn of mouse and line numbering so it's easy to copy paste
+nmap mo :set<Space>mouse=<Cr>:set<Space>nonu<Cr>
+nmap mO :set<Space>mouse=a<Cr>:set<Space>nu<Cr>
+
 "in normal mode map ; to the command console
 nmap ; :
 
@@ -89,3 +93,4 @@ filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set pastetoggle=<F3>
