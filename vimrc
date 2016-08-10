@@ -47,7 +47,7 @@ endif
 imap ht <Esc>
 nmap ht <Esc>
 vmap ht <Esc>
-
+cmap ht <Esc>
 
 "make g + left|right (h or l) take you left or right a tab
 nmap gh :tabp<Cr>  
@@ -56,24 +56,33 @@ nmap g<Left> :tabp<Cr>
 nmap g<Right> :tabn<Cr>  
 
 "copy and paste to the system register
-nmap s <Nop>
-vmap s <Nop>
+"nmap s <Nop>
+"vmap s <Nop>
 nmap sy "+y
 nmap sp "+p
 nmap sY "+Y
 nmap sP "+P
 set clipboard=unnamedplus
 
-"turn of mouse and line numbering so it's easy to copy paste
+"turn off mouse and line numbering so it's easy to copy paste
+nmap m <Nop>
+nmap M <Nop>
 nmap mo :set<Space>mouse=<Cr>:set<Space>nonu<Cr>
 nmap mO :set<Space>mouse=a<Cr>:set<Space>nu<Cr>
 
 "in normal mode map ; to the command console
 nmap ; :
+"in command mode double tap ; to submit command
+cmap ;; <Cr>
+"in command mode double tap directional keys to navigate previous commands
+cmap kk <Up>
+cmap jj <Down>
 
 "Disable replace mode so it doesn't destroy undo history
-nmap R <Nop> 
-nmap r <Nop> 
+"nmap R <Nop> 
+"nmap r <Nop> 
+"nmap S <Nop> 
+"nmap s <Nop> 
 
 nmap <C-i> ggVG=<C-o><C-o>
 
@@ -82,7 +91,7 @@ set nowrap
 
 set showcmd		" Show (partial) command in status line.
 set showmatch		" Show matching brackets.
-set ignorecase		" Do case insensitive matching
+set ignorecase
 set smartcase		" Do smart case matching
 set incsearch		" Incremental search
 set autowrite		" Automatically save before commands like :next and :make
@@ -94,3 +103,16 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set pastetoggle=<F3>
+"splits open to the right and bottom
+set splitbelow
+set splitright
+"remap move down window 
+nnoremap  sj <C-W><C-J>
+"remap move up window 
+nnoremap  sk <C-W><C-K>
+"remap move right window 
+nnoremap  sl <C-W><C-L>
+"remap move left window 
+nnoremap  sh <C-W><C-H>
+"add this in to preserve buffer on quit, creates a delay of  ~1.5s
+"autocmd VimLeave * call system("echo -n $'" . escape(getreg(), "'") . "' | xsel -ib")
