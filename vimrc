@@ -62,7 +62,6 @@ nmap sy "+y
 nmap sp "+p
 nmap sY "+Y
 nmap sP "+P
-set clipboard=unnamedplus
 
 "turn off mouse and line numbering so it's easy to copy paste
 nmap m <Nop>
@@ -78,11 +77,8 @@ cmap ;; <Cr>
 cmap kk <Up>
 cmap jj <Down>
 
-"Disable replace mode so it doesn't destroy undo history
-"nmap R <Nop> 
-"nmap r <Nop> 
-"nmap S <Nop> 
-"nmap s <Nop> 
+nmap S <Nop> 
+nmap s <Nop> 
 
 nmap <C-i> ggVG=<C-o><C-o>
 
