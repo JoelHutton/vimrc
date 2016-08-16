@@ -56,8 +56,6 @@ nmap g<Left> :tabp<Cr>
 nmap g<Right> :tabn<Cr>  
 
 "copy and paste to the system register
-"nmap s <Nop>
-"vmap s <Nop>
 vmap sy "+y
 vmap sp "+p
 vmap sY "+Y
@@ -68,8 +66,6 @@ nmap sY "+Y
 nmap sP "+P
 
 "turn off mouse and line numbering so it's easy to copy paste
-nmap m <Nop>
-nmap M <Nop>
 nmap mo :set<Space>mouse=<Cr>:set<Space>nonu<Cr>
 nmap mO :set<Space>mouse=a<Cr>:set<Space>nu<Cr>
 
