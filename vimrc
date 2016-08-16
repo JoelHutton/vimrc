@@ -58,6 +58,10 @@ nmap g<Right> :tabn<Cr>
 "copy and paste to the system register
 "nmap s <Nop>
 "vmap s <Nop>
+vmap sy "+y
+vmap sp "+p
+vmap sY "+Y
+vmap sP "+P
 nmap sy "+y
 nmap sp "+p
 nmap sY "+Y
@@ -112,3 +116,5 @@ nnoremap  sl <C-W><C-L>
 nnoremap  sh <C-W><C-H>
 "add this in to preserve buffer on quit, creates a delay of  ~1.5s
 "autocmd VimLeave * call system("echo -n $'" . escape(getreg(), "'") . "' | xsel -ib")
+set timeout
+set timeoutlen=350
