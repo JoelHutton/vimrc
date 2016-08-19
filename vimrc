@@ -67,7 +67,7 @@ nmap sP "+P
 
 "turn off mouse and line numbering so it's easy to copy paste
 nmap mo :set<Space>mouse=<Cr>:set<Space>nonu<Cr>
-nmap mO :set<Space>mouse=a<Cr>:set<Space>nu<Cr>
+nmap mO :set<Space>mouse=inv<Cr>:set<Space>nu<Cr>
 
 "in normal mode map ; to the command console
 nmap ; :
@@ -92,7 +92,7 @@ set smartcase		" Do smart case matching
 set incsearch		" Incremental search
 set autowrite		" Automatically save before commands like :next and :make
 set hidden		" Hide buffers when they are abandoned
-set mouse=a		" Enable mouse usage (all modes)
+set mouse=inv	" Enable mouse usage in insert, normal, visual modes
 
 filetype plugin indent on
 set tabstop=4
