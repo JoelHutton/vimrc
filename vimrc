@@ -42,18 +42,18 @@ if filereadable("/etc/vim/vimrc.local")
 	source /etc/vim/vimrc.local
 endif
 
-"DVORAK mappings 
-"quick escape mappings in insert, normal and visual modes 
+"DVORAK mappings
+"quick escape mappings in insert, normal and visual modes
 imap ht <Esc>
 nmap ht <Esc>
 vmap ht <Esc>
 cmap ht <Esc>
 
 "make g + left|right (h or l) take you left or right a tab
-nmap gh :tabp<Cr>  
-nmap gl :tabn<Cr>  
-nmap g<Left> :tabp<Cr>  
-nmap g<Right> :tabn<Cr>  
+nmap gh :tabp<Cr>
+nmap gl :tabn<Cr>
+nmap g<Left> :tabp<Cr>
+nmap g<Right> :tabn<Cr>
 
 "copy and paste to the system register
 vmap sy "+y
@@ -77,40 +77,47 @@ cmap ;; <Cr>
 cmap kk <Up>
 cmap jj <Down>
 
-nmap S <Nop> 
-nmap s <Nop> 
+nmap S <Nop>
+nmap s <Nop>
 
 nmap <C-i> ggVG=<C-o><C-o>
 
 set number
 set nowrap
 
-set showcmd		" Show (partial) command in status line.
-set showmatch		" Show matching brackets.
-set ignorecase
-set smartcase		" Do smart case matching
-set incsearch		" Incremental search
-set autowrite		" Automatically save before commands like :next and :make
-set hidden		" Hide buffers when they are abandoned
-set mouse=inv	" Enable mouse usage in insert, normal, visual modes
+set showcmd         " Show (partial) command in status line.
+set showmatch       " Show matching brackets.
+set ignorecase      " ignore case in regexes
+set smartcase       " Do smart case matching
+set incsearch       " Incremental search
+set autowrite       " Automatically save before commands like :next and :make
+set hidden          " Hide buffers when they are abandoned
+set mouse=inv       " Enable mouse usage in insert, normal, visual modes
 
+"set tabs as 4 spaces
 filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set pastetoggle=<F3>
+
+"show leading tabs, trailing spaces, eol
+set list
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+
 "splits open to the right and bottom
 set splitbelow
 set splitright
-"remap move down window 
+"remap move down window
 nnoremap  sj <C-W><C-J>
-"remap move up window 
+"remap move up window
 nnoremap  sk <C-W><C-K>
-"remap move right window 
+"remap move right window
 nnoremap  sl <C-W><C-L>
-"remap move left window 
+"remap move left window
 nnoremap  sh <C-W><C-H>
 "add this in to preserve buffer on quit, creates a delay of  ~1.5s
 "autocmd VimLeave * call system("echo -n $'" . escape(getreg(), "'") . "' | xsel -ib")
+"timeout between key presses for mappings
 set timeout
 set timeoutlen=350
