@@ -121,3 +121,4 @@ nnoremap  sh <C-W><C-H>
 "timeout between key presses for mappings
 set timeout
 set timeoutlen=350
+set colorcolumn=80
