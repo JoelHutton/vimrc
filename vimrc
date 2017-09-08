@@ -122,3 +122,4 @@ nnoremap  sh <C-W><C-H>
 set timeout
 set timeoutlen=350
 set colorcolumn=80
+command W w !sudo tee % > /dev/null
