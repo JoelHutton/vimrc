@@ -43,11 +43,11 @@ if filereadable("/etc/vim/vimrc.local")
 endif
 
 "DVORAK mappings
-"quick escape mappings in insert, normal and visual modes
-imap ht <Esc>
-nmap ht <Esc>
-vmap ht <Esc>
-cmap ht <Esc>
+"quick escape mappings in insert, normal and visual modes, remap CAPS instead
+"imap ht <Esc>
+"nmap ht <Esc>
+"vmap ht <Esc>
+"cmap ht <Esc>
 
 "make g + left|right (h or l) take you left or right a tab
 nmap gh :tabp<Cr>
@@ -95,11 +95,11 @@ set hidden          " Hide buffers when they are abandoned
 set mouse=inv       " Enable mouse usage in insert, normal, visual modes
 
 "set tabs as 4 spaces
-filetype plugin indent on
-set tabstop=4
-set shiftwidth=4
-set expandtab
-set pastetoggle=<F3>
+"filetype plugin indent on
+"set tabstop=4
+"set shiftwidth=4
+"set expandtab
+"set pastetoggle=<F3>
 
 "show leading tabs, trailing spaces, eol
 set list
