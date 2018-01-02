@@ -66,8 +66,8 @@ nmap sY "+Y
 nmap sP "+P
 
 "turn off mouse and line numbering so it's easy to copy paste
-nmap mo :set<Space>mouse=<Cr>:set<Space>nonu<Cr>
-nmap mO :set<Space>mouse=inv<Cr>:set<Space>nu<Cr>
+nmap mo :set<Space>mouse=<Cr>:set<Space>nonu<Cr>:set<Space>paste<Cr>
+nmap mO :set<Space>mouse=inv<Cr>:set<Space>nu<Cr>:set<Space>nopaste<Cr>
 
 "in normal mode map ; to the command console
 nmap ; :
@@ -122,4 +122,5 @@ nnoremap  sh <C-W><C-H>
 set timeout
 set timeoutlen=350
 set colorcolumn=80
+"for when you open a file without sudo by mistake
 command W w !sudo tee % > /dev/null
