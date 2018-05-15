@@ -116,11 +116,20 @@ nnoremap  sk <C-W><C-K>
 nnoremap  sl <C-W><C-L>
 "remap move left window
 nnoremap  sh <C-W><C-H>
-"add this in to preserve buffer on quit, creates a delay of  ~1.5s
-"autocmd VimLeave * call system("echo -n $'" . escape(getreg(), "'") . "' | xsel -ib")
-"timeout between key presses for mappings
-set timeout
-set timeoutlen=350
-set colorcolumn=80
+"add this in to preserve buffer on quit, creates a delay on leaving
+autocmd VimLeave * call system("echo -n $'" . escape(getreg(), "'") . "' | xsel -ib")
+
+"highlight character 81 on long lines
+au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%80v.', -1)
+
+"wrap git commit messages
+au FileType gitcommit set tw=72
+"set 4 spaces for tab in git commits
+au FileType gitcommit set tabstop=4
+au FileType gitcommit set shiftwidth=4
+au FileType gitcommit set expandtab
+"highlight character 81 on long lines
+au FileType gitcommit au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%72v.', -1)
+
 "for when you open a file without sudo by mistake
 command W w !sudo tee % > /dev/null
